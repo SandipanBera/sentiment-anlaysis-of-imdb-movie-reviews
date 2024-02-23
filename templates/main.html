@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sentiment analysis</title>
+    <style>
+        body{
+	font-family:'Franklin Gothic Medium', 'Arial Narrow';
+    text-align: center;
+    margin: 0;
+    padding: 0;
+	display: flex;
+  	flex-direction: column;
+    background: linear-gradient(315deg, #dce82e 0%, #f6fc9c 74%);
+}
+
+
+.container{
+	padding: 30px;
+	position: relative;
+    background: transparent;
+   
+	
+}
+
+
+.heading{
+    margin: 0;
+    color: red
+}
+
+
+
+.description p{
+    font-style: italic;
+    font-size: 20px;
+    margin: 3px 0 0;
+    color:rgb(4, 0, 255);
+  
+  
+}
+
+.container2{
+	flex: 1 0 auto;
+    height: 500px;
+    padding-top: 80px ;
+}
+
+.message-box{
+    margin-bottom: 30px;
+    background: #eee;
+   box-shadow: inset 2px 2px 2px 0px rgba(255,255,255,.5),
+   7px 7px 20px 0px rgba(0,0,0,.1),
+   4px 4px 5px 0px rgba(0,0,0,.1);
+}
+ input {
+  margin: 10px;
+}
+.custom-btn {
+  width: 130px;
+  height: 40px;
+  color: #fff;
+  border-radius: 5px;
+  padding: 10px 25px;
+  font-family: 'Lato', sans-serif;
+  font-weight: 500;
+  background: transparent;
+  cursor:pointer;
+  position: relative;
+  display: inline-block;
+   box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
+   7px 7px 20px 0px rgba(0,0,0,.1),
+   4px 4px 5px 0px rgba(0,0,0,.1);
+  outline: none;
+}
+.btn{
+  background: rgb(255,151,0);
+  border: none;
+  z-index: 1;
+}
+.btn:hover {
+  color: #000;
+}
+
+.btn:active {
+  top: 2px;
+}
+       
+    </style>
+</head>
+<body>
+    <div class="main">
+    
+    <div class="container">
+        <h2 class='heading'><span>Movies Reviews Classifier</span> </h2>
+        <div class='description'>
+            <p> Machine Learning Web App for sentiment analysis</p>
+        </div>
+    </div>
+
+    <!-- Text Area -->
+    <div class="container2">
+        <form action="{{ url_for('predict') }}" method="POST">
+            <textarea class='message-box' name="message" rows="15" cols="60" placeholder="Enter Your Comments Here... (ex: it is a good movie,this is a worst movie etc.)"></textarea><br/>
+            <div class="inp">
+            <input type="submit" class=" custom-btn btn" value="Predict">
+        </form>
+    </div>
+</div>
+</div>
+</body>
+</html>
